@@ -1,0 +1,40 @@
+.middlesection{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    flex-flow: row wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+.middleDataDiv{
+    width:25%;
+  
+    max-width: 300px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-flow: row wrap;
+    background-color: rgb(245, 245, 220);
+}
+.mainDivMiddle{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.img-responsive{
+    height:20vh;
+}
+div.middleDataDiv:hover{
+    /* animation: flip 4s infinite;
+    transform-style: preserve-3d; */
+    box-shadow: 0px 20px 30px  rgb(144, 139, 139) ;
+    margin-top: -5px;
+}
+
+@keyframes flip {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+  }

@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+.ul{
+    border-left: 6px solid #5e37bc;
+    background-color:orange;
+    color: white;
+   list-style-type: circle;
+   padding: 11px 21px;
+}
+.MuiList-padding{
+  margin-top: 2px !important;
+  background: linear-gradient(to right, #ffb347, #ffcc33);;
+}
