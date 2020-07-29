@@ -74,10 +74,9 @@ function Slidera(props) {
 
   const addToCartTest = (id) => {
     const h = state.filter((e) => e._id === id);
-    dispatch(updateCart(h))
+    dispatch(updateCart(h));
     setCarty(h);
   };
-
 
   const Price = props.Price;
   const fullData = state;
@@ -125,7 +124,17 @@ function Slidera(props) {
             )
           )}
 
-      {Cart.length === 0 ?<div className="Footerdata" style={{display:"none"}}> <FloatFooter badgeData={state}/></div>:<div className="Footerdata"> <FloatFooter badgeData={cart}/></div>}
+      {Cart.length === 0 ? (
+        <div className="Footerdata" style={{ display: "none" }}>
+          {" "}
+          <FloatFooter badgeData={state} />
+        </div>
+      ) : (
+        <div className="Footerdata">
+          {" "}
+          <FloatFooter badgeData={cart} />
+        </div>
+      )}
     </div>
   );
 }
