@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 function Navbar(props) {
   const cart = useSelector((state) => state.cart);
   return (
-    <div className="nav">
+    <div className="nav" style={{backgroundColor:"#ffdb3a"}}>
       <input type="checkbox" id="nav-check" />
       <div className="nav-header">
         <div className="nav-title">Jagtari</div>

@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import axios from "axios";
 import Four from './components/404'
 import Product from './components/Product'
+import Navbar from './components/navbar'
 //import hooks & redux
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "./actions";
@@ -28,6 +29,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar/>
       <Switch>
         <Route path="/" exact>
           <Front IntialData={state} />
@@ -38,7 +40,7 @@ function App() {
         <Route path="/Login" exact component={Cart} />
         <Route path="/Add Your Menu" exact component={Cart} />
         <Route path="/cool" exact component={Cart}/>
-        <Route path="/product" exact component={Product}/>
+        <Route path="/product/:id"  component={Product}/>
         <Route component={Four} />
         </Switch>
       </div>

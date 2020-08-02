@@ -17,7 +17,6 @@ function Foodlist (props) {
         return (
                     <div >
                                <div className="center">
-                                    <Navbar/> 
                                    <div className="centeralData"> <h1 >Enter Your Amount to Find the Best Food Around you</h1></div> 
                                          <FormControl style={stylej.inputbox} size="small" variant="outlined" >
                                             

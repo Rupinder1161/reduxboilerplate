@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./middle.css";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Card from "@material-ui/core/Card";
@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Cart from "./Cart";
 import FloatFooter from "./FloatFooter";
+import Product from "./Product"
 
 //import hooks & redux
 import { useSelector, useDispatch } from "react-redux";
@@ -44,7 +45,7 @@ const CardA = (props) => (
         mussels, if you like.
       </Typography>
     </CardContent>
-    <Button
+    <Link to={"/product/" + props.id} ><Button
       variant="contained"
       style={{ width: "100%" }}
       color="secondary"
@@ -53,7 +54,7 @@ const CardA = (props) => (
       }}
     >
       Order Now{" "}
-    </Button>
+    </Button></Link>
   </Card>
 );
 
@@ -101,6 +102,7 @@ function Slidera(props) {
                   venueName={e.VenueName}
                   picLink={e.Piclink}
                   foodName={e.FoodName}
+                  id = {e._id}
                   updateCart={addToCartTest}
                   price={Price}
                 >

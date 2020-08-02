@@ -10,7 +10,7 @@ import Payment from "./Payment";
 
 const Table = (props) => (
  <div>
-    <table style={{width:"90%",marginLeft:"5%",marginRight:"5%"}} >
+    <table style={{width:"90%", marginTop:"5%", marginLeft:"5%",marginRight:"5%"}} >
       <caption>Order Summary</caption>
       <thead>
         <tr>
