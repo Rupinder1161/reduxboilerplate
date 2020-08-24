@@ -1,24 +1,24 @@
 .middlesection {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-evenly;
   flex-flow: row wrap;
   background-color: rgb(255, 255, 255);
 }
 
 .middleDataDiv {
   width: 25%;
-
-  max-width: 300px;
+  max-width: 400px;
   min-width: 300px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px;
   flex-flow: row wrap;
   background-color: rgb(245, 245, 220);
 }
 .mainDivMiddle {
-  width: 100%;
+  width: 75%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

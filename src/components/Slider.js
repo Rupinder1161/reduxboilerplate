@@ -12,14 +12,16 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Cart from "./Cart";
 import FloatFooter from "./FloatFooter";
-import Product from "./Product"
+import Product from "./Product";
 
 //import hooks & redux
 import { useSelector, useDispatch } from "react-redux";
 import { increment, updateCart } from "../actions";
 
 const CardA = (props) => (
-  <Card style={{ backgroundColor: "#F5F5DC" }}>
+  <Card style={{
+    backgroundColor: "#F5F5DC", display: "flex", flexFlow: "row wrap",
+  justifyContent:"center"}}>
     <CardHeader
       avatar={
         <Avatar
@@ -34,7 +36,7 @@ const CardA = (props) => (
       title={props.foodName + " from " + props.venueName}
       subheader="September 14, 2016"
     />
-    <CardMedia title="Paella dish">
+    <CardMedia title="Paella dish " >
       <img className="img-responsive" alt="hello" src={props.picLink} />
     </CardMedia>
     <CardContent>
@@ -45,16 +47,18 @@ const CardA = (props) => (
         mussels, if you like.
       </Typography>
     </CardContent>
-    <Link to={"/product/" + props.id} ><Button
-      variant="contained"
-      style={{ width: "100%" }}
-      color="secondary"
-      onClick={() => {
-        props.updateCart(props.id);
-      }}
-    >
-      Order Now{" "}
-    </Button></Link>
+    <Link to={"/product/" + props.id}>
+      <Button
+        variant="contained"
+        style={{ width: "100%" }}
+        color="secondary"
+        onClick={() => {
+          props.updateCart(props.id);
+        }}
+      >
+        Order Now{" "}
+      </Button>
+    </Link>
   </Card>
 );
 
@@ -71,6 +75,7 @@ function Slidera(props) {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.data);
   const cart = useSelector((state) => state.cart);
+  const categories = useSelector((state) => state.cartgories);
   const [carty, setCarty] = useState();
 
   const addToCartTest = (id) => {
@@ -82,9 +87,14 @@ function Slidera(props) {
   const Price = props.Price;
   const fullData = state;
   const Cart = cart;
+  const dataCatergoriezed =
+    categories === "ALL" ? fullData : categories == "More"
+      ? fullData.filter(e => (e.FoodName !== "Burger" && e.FoodName !== "Pizza"))
+      : fullData.filter((e) => e.FoodName == categories);
+  console.log(dataCatergoriezed);
   return (
     <div className="mainDivMiddle">
-      {fullData.length == 0
+      {dataCatergoriezed.length == 0
         ? loadingdata.map((e) => (
             <div className="middleDataDiv">
               {e.name}
@@ -93,7 +103,7 @@ function Slidera(props) {
               <Skeleton width="100%" /> <Skeleton width="100%" variant="text" />
             </div>
           ))
-        : fullData.map((e) =>
+        : dataCatergoriezed.map((e) =>
             e.Price <= Price ? (
               <div className="middleDataDiv">
                 <CardA
@@ -102,7 +112,7 @@ function Slidera(props) {
                   venueName={e.VenueName}
                   picLink={e.Piclink}
                   foodName={e.FoodName}
-                  id = {e._id}
+                  id={e._id}
                   updateCart={addToCartTest}
                   price={Price}
                 >

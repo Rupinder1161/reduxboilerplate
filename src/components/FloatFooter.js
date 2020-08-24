@@ -8,7 +8,6 @@ import Box from "@material-ui/core/Box";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import Button from "@material-ui/core/Button";
 
-
 //router and redux import
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -47,67 +46,60 @@ const Table = (props) => (
         ))}
       </tbody>
     </table>
-   
+
     <Typography> Total :{props.dataPrice}</Typography>
-    <Link to={"/Cart/"}>  <Button
-          variant="contained"
-          style={{ width: "100%", marginTop: "20px", marginBottom: "20px" }}
-          color="primary"
-        >
-          Proceed to Checkout
-        </Button></Link>
+    <Link to={"/Cart/"}>
+      {" "}
+      <Button
+        variant="contained"
+        style={{ width: "100%", marginTop: "20px", marginBottom: "20px" }}
+        color="primary"
+      >
+        Proceed to Checkout
+      </Button>
+    </Link>
   </div>
 );
 //table
 
-
-
-
-
-function FloatFooter () {
-     
+function FloatFooter() {
   const h = useSelector((state) => state.cart);
   const hh = h.map((e) => e[0]);
-    const dataPrice = hh.map((e) => e.Price).reduce((a, b) => a + b, 0);
-    return (
-      <PopupState variant="popover" popupId="demo-popup-popover">
-        {(popupState) => (
-          <div className="floatfooter">
-            <div className="floatfooter" {...bindTrigger(popupState)}>
-              <Badge
-                className="cool"
-                badgeContent={hh.length}
-                color="secondary"
-                showZero
-              >
-                <ShoppingCartIcon />
-              </Badge>
-            </div>
-
-            <Popover
-              {...bindPopover(popupState)}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-              transformOrigin={{
-                vertical: "bottom",
-                horizontal: "center",
-              }}
+  const dataPrice = hh.map((e) => e.Price).reduce((a, b) => a + b, 0);
+  return (
+    <PopupState variant="popover" popupId="demo-popup-popover">
+      {(popupState) => (
+        <div className="floatfooter">
+          <div className="floatfooter" {...bindTrigger(popupState)}>
+            <Badge
+              className="cool"
+              badgeContent={hh.length}
+              color="secondary"
+              showZero
             >
-              <Box>
-                <Table
-                  dataPrice={dataPrice}
-                  total={dataPrice}
-                  propData={hh}
-                />
-              </Box>
-            </Popover>
+              <ShoppingCartIcon />
+            </Badge>
           </div>
-        )}
-      </PopupState>
-    );
-  }
 
+          <Popover
+            {...bindPopover(popupState)}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "bottom",
+              horizontal: "center",
+            }}
+          >
+            <Box>
+              <Table dataPrice={dataPrice} total={dataPrice} propData={hh} />
+            </Box>
+          </Popover>
+        </div>
+      )}
+    </PopupState>
+  );
+}
 
 export default FloatFooter;

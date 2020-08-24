@@ -10,3 +10,9 @@ export const updateCart = (data) => {
     payload: data,
   };
 };
+export const updateCategory = (data) => {
+  return {
+    type: "ADD_TO_CATER",
+    payload: data,
+  };
+};

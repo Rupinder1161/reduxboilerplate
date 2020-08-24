@@ -7,6 +7,16 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.frontclass{
+  background-color: green;
+  width:100%;
+  height:40px;
+
+}
+
+
+
 .header {
   /* width: 100%; */
   background-color: black;
@@ -264,7 +274,7 @@ button {
 .nav {
   width: 100%;
   display: flex;
-  background-color: #ffdb3a ;
+  background-color: #ffdb3a;
   justify-content: space-between;
   flex-flow: row wrap;
   z-index: 100;
@@ -390,4 +400,12 @@ button {
   min-width: 400px;
   color: black;
   text-shadow: 1px 0px 20px rgb(218, 56, 202);
+}
+/* front */
+
+.front{
+  background-color: green !important;
+  width:100%;
+  display: flex;
+  flex-flow: row rwa;
 }

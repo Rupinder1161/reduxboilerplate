@@ -1,0 +1,43 @@
+.sideComponent {
+  margin-top: 20px;
+  align-items: flex-start;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+.SLIDERITEM {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  display: flex;
+  font-weight: 800;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.SLIDERITEM:hover {
+  color: red;
+  border-radius: 20px;
+  background-color: #c0c4c7;
+}
+
+@media (max-width: 700px) {
+  .sideComponent {
+    margin-top: 20px;
+    align-items: flex-start;
+    padding-right: 10px;
+    border-right: 1px solid transparent;
+  }
+
+  .SLIDERITEM {
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-bottom: 1px solid green;
+    display: flex;
+    font-weight: 800;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+  }
+}
