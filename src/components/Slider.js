@@ -13,15 +13,21 @@ import Button from "@material-ui/core/Button";
 import Cart from "./Cart";
 import FloatFooter from "./FloatFooter";
 import Product from "./Product";
-
+//material ui icons
+import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 //import hooks & redux
 import { useSelector, useDispatch } from "react-redux";
 import { increment, updateCart } from "../actions";
 
 const CardA = (props) => (
-  <Card style={{
-    backgroundColor: "#F5F5DC", display: "flex", flexFlow: "row wrap",
-  justifyContent:"center"}}>
+  <Card
+    style={{
+      backgroundColor: "#F5F5DC",
+      display: "flex",
+      flexFlow: "row wrap",
+      justifyContent: "center",
+    }}
+  >
     <CardHeader
       avatar={
         <Avatar
@@ -36,7 +42,7 @@ const CardA = (props) => (
       title={props.foodName + " from " + props.venueName}
       subheader="September 14, 2016"
     />
-    <CardMedia title="Paella dish " >
+    <CardMedia title="Paella dish ">
       <img className="img-responsive" alt="hello" src={props.picLink} />
     </CardMedia>
     <CardContent>
@@ -88,62 +94,83 @@ function Slidera(props) {
   const fullData = state;
   const Cart = cart;
   const dataCatergoriezed =
-    categories === "ALL" ? fullData : categories == "More"
-      ? fullData.filter(e => (e.FoodName !== "Burger" && e.FoodName !== "Pizza"))
+    categories === "ALL"
+      ? fullData
+      : categories == "More"
+      ? fullData.filter(
+          (e) => e.FoodName !== "Burger" && e.FoodName !== "Pizza"
+        )
       : fullData.filter((e) => e.FoodName == categories);
   console.log(dataCatergoriezed);
   return (
     <div className="mainDivMiddle">
-      {dataCatergoriezed.length == 0
-        ? loadingdata.map((e) => (
+      {dataCatergoriezed.length == 0 ? (
+        loadingdata.map((e) => (
+          <div className="middleDataDiv">
+            {e.name}
+            <Skeleton width="100%" /> <Skeleton width="80%" height="20vh" />{" "}
+            <Skeleton width="100%" /> <Skeleton width="100%" />{" "}
+            <Skeleton width="100%" /> <Skeleton width="100%" variant="text" />
+          </div>
+        ))
+      ) : Price < 0 ? (
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            display: "flex",
+            flexFlow: "column",
+
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SentimentVeryDissatisfiedIcon  style={{width:"300px",height:"300px"}} />{" "}
+          <h1 style={{marginTop:"20px"}}>No Food Found under this price</h1>
+        </div>
+      ) : (
+        dataCatergoriezed.map((e) =>
+          e.Price <= Price ? (
             <div className="middleDataDiv">
-              {e.name}
-              <Skeleton width="100%" /> <Skeleton width="80%" height="20vh" />{" "}
-              <Skeleton width="100%" /> <Skeleton width="100%" />{" "}
-              <Skeleton width="100%" /> <Skeleton width="100%" variant="text" />
+              <CardA
+                data={e.Price}
+                id={e._id}
+                venueName={e.VenueName}
+                picLink={e.Piclink}
+                foodName={e.FoodName}
+                id={e._id}
+                updateCart={addToCartTest}
+                price={Price}
+              >
+                e.Price
+              </CardA>
             </div>
-          ))
-        : dataCatergoriezed.map((e) =>
-            e.Price <= Price ? (
-              <div className="middleDataDiv">
-                <CardA
-                  data={e.Price}
-                  id={e._id}
-                  venueName={e.VenueName}
-                  picLink={e.Piclink}
-                  foodName={e.FoodName}
-                  id={e._id}
-                  updateCart={addToCartTest}
-                  price={Price}
-                >
-                  e.Price
-                </CardA>
-              </div>
-            ) : Price == 0 || Price == null ? (
-              <div className="middleDataDiv">
-                <CardA
-                  data={e.Price}
-                  venueName={e.VenueName}
-                  id={e._id}
-                  updateCart={addToCartTest}
-                  picLink={e.Piclink}
-                  foodName={e.FoodName}
-                  price={Price}
-                />
-              </div>
-            ) : (
-              ""
-            )
-          )}
+          ) : Price == 0 || Price == null ? (
+            <div className="middleDataDiv">
+              <CardA
+                data={e.Price}
+                venueName={e.VenueName}
+                id={e._id}
+                updateCart={addToCartTest}
+                picLink={e.Piclink}
+                foodName={e.FoodName}
+                price={Price}
+              />
+            </div>
+          ) : (
+            ""
+          )
+        )
+      )}
 
       {Cart.length === 0 ? (
         <div className="Footerdata" style={{ display: "none" }}>
-          {" "}
+          {""}
           <FloatFooter badgeData={state} />
         </div>
       ) : (
         <div className="Footerdata">
-          {" "}
+          {""}
           <FloatFooter badgeData={cart} />
         </div>
       )}

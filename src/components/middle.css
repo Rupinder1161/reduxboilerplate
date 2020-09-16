@@ -1,6 +1,7 @@
 .middlesection {
   width: 100%;
   display: flex;
+
   justify-content: space-evenly;
   flex-flow: row wrap;
   background-color: rgb(255, 255, 255);

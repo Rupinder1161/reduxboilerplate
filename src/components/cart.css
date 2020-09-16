@@ -7,10 +7,11 @@
   font-size: 0.8em;
   padding: 1em 1em;
   color:black;
-  background: #2f8614;
+  background: #ffffff;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 10px;
   float: right;
+  border: 1px solid black;
   text-align: right;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
@@ -42,10 +43,25 @@
 
 /* TOTAL AND CHECKOUT */
 .subtotal {
+  margin-top: 20px;
   width: 35%;
   float: right;
   display: flex;
+  flex-flow: column ;
+  align-items: center;
   justify-content: center;
+}
+.titlewindow {
+  width: 75%;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row ;
+  justify-content: space-between;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.myCart{
+  color: rgb(79, 78, 78);
 }
 
 @media only screen and (max-width: 39.375em) {
@@ -53,6 +69,24 @@
     width: 98%;
     padding: 2% 0;
   }
+  .titlewindow {
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.subtotal {
+  margin-top: 20px;
+  width: 50%;
+  float: right;
+  display: flex;
+  flex-flow: column ;
+  /* align-items: center;
+  justify-content: center; */
+}
   .projTitle {
     font-size: 1.5em;
     padding: 10% 5%;
@@ -98,6 +132,7 @@
   }
   .myCart{
     width: 100%;
+    color: rgb(79, 78, 78);
     text-align: center;
   }
 }

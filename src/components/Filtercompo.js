@@ -3,6 +3,7 @@ import "./filtercomponent.css";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import LocalPizzaIcon from "@material-ui/icons/LocalPizza";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import redux
 import { useSelector, useDispatch } from "react-redux";
@@ -31,6 +32,11 @@ function Filtercompo() {
     }
   return (
     <div className="sideComponent">
+       <Hello
+        updateCate={update}
+        food="ALL"
+        Icon={EmojiEmotionsOutlinedIcon}
+      />
       <Hello
         updateCate={update}
         food="Burger"

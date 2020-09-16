@@ -345,23 +345,29 @@ button {
   .nav > .nav-btn > label {
     display: inline-block;
     width: 30px;
+    margin-top: 10px;
+    margin-right: 20px;
+    
     /* height: 50px; */
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,
   .nav #nav-check:checked ~ .nav-btn > label {
     text-align: center;
-    margin-right: 10px;
+    color:green;
     transform: scale(1.1);
     transition: all 0.3s ease-in;
   }
+ 
   .nav > .nav-btn > label > span {
     display: block;
     width: 25px;
     height: 10px;
+    margin-top: 5px;
     border-top: 2px solid rgb(7, 7, 7);
   }
   .nav > .nav-links {
+    margin-top: 20px;
     position: absolute;
     display: block;
     text-align: center;
@@ -370,13 +376,14 @@ button {
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
-    top: 50px;
+    top: 70px;
     left: 0px;
   }
 
   .nav > .nav-links > a {
     display: block;
-    width: 80%;
+    margin-top: 10px;
+    width: 100%;
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;

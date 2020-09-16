@@ -47,9 +47,10 @@ const Table = (props) => (
       </tbody>
     </table>
 
-    <Typography> Total :{props.dataPrice}</Typography>
+    {/* <Typography> Total :{props.dataPrice}</Typography> */}
 
     <div className="subtotal cf">
+    <Typography> Total :{props.dataPrice}</Typography>
       <ul>
         <li className="totalRow">
           <span className="label">Subtotal</span>
@@ -78,7 +79,8 @@ const Table = (props) => (
         </li>
       </ul>
     </div>
-    <Payment fullData={props.propData} />
+    {/* <Payment fullData={props.propData} /> */}
+    {/* payment system */}
   </div>
 );
 
@@ -93,7 +95,7 @@ function Cart(props) {
     <div className="mainWindw">
       <h1 className="projTitle"> {props.hh}</h1>
       <div className="titlewindow">
-        <h1 className="myCart">My Cart</h1>
+        <h1 className="myCart"> Your Cart</h1>
         <Link to="/" className="btn continue">
           Continue Shopping
         </Link>

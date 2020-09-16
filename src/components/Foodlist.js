@@ -23,12 +23,15 @@ function Foodlist(props) {
         <FormControl style={stylej.inputbox} size="small" variant="outlined">
           <OutlinedInput
             id="outlined-adornment-amount"
+            focused
+            input
             // defaultValue={0}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
             variant="outlined"
             type="number"
+            min={0}
             style={{ background: "white" }}
           />
         </FormControl>

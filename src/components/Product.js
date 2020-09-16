@@ -10,15 +10,16 @@ import { increment, updateCart } from "../actions";
 
 export default function Product(props) {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.data);
+  const MainData = useSelector((mainData) => mainData.data);
   const cart = useSelector((state) => state.cart);
   const [carty, setCarty] = useState();
 
-  const filteredItem = state.filter((e) => e._id === props.match.params.id);
-  console.log(filteredItem[0]);
-  const senddata = () => {
-    dispatch(increment("hello"));
-    console.log("data sent");
+  const filteredItem = MainData.filter((e) => e._id === props.match.params.id);
+
+  const addToCartTest = (id) => {
+    const h = MainData.filter((e) => e._id === id);
+    dispatch(updateCart(h));
+    setCarty(h);
   };
   return (
     <div className="bodyWrap">
@@ -82,7 +83,8 @@ export default function Product(props) {
             </select>
             <button
               onClick={() => {
-                senddata();
+                console.log(filteredItem.map((e) => e._id)[0]);
+                addToCartTest(filteredItem.map((e) => e._id)[0]);
               }}
             >
               Add to Cart
@@ -132,7 +134,7 @@ export default function Product(props) {
 
           <div className="info">
             <h3> Product From Same Venue</h3>
-            {state.map((e) => (
+            {MainData.map((e) => (
               <div className="product vtop soft">
                 <a href="#">
                   <div className="smallBox">
