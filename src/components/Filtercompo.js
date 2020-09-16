@@ -12,7 +12,6 @@ import { updateCategory } from "../actions";
 function Hello({ food, Icon,updateCate }) {
   return (
       <div className="SLIDERITEM" onClick={() => {
-          console.log("dfgffd")
           updateCate(food)
     }}>
       <Icon />

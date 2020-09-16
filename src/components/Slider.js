@@ -101,7 +101,6 @@ function Slidera(props) {
           (e) => e.FoodName !== "Burger" && e.FoodName !== "Pizza"
         )
       : fullData.filter((e) => e.FoodName == categories);
-  console.log(dataCatergoriezed);
   return (
     <div className="mainDivMiddle">
       {dataCatergoriezed.length == 0 ? (
