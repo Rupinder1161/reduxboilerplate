@@ -14,7 +14,7 @@ function Foodlist(props) {
   const state = useSelector((state) => state.data);
 
   return (
-    <div style={{marginTop="0px"}}>
+    <div style={{marginTop:"0px"}}>
       <div className="center">
         <div className="centeralData">
           {" "}
