@@ -104,7 +104,7 @@ function Slidera(props) {
 
   const priceArray = dataCatergoriezed.map((e) => e.Price);
   const minPrice = Math.min(...priceArray);
-  console.log(minPrice);
+  // console.log(minPrice);
   return (
     <div className="mainDivMiddle">
       {dataCatergoriezed.length === 0
