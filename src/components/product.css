@@ -17,7 +17,7 @@ a:hover {
   justify-content: center;
   width: 100%;
   flex-flow: row wrap;
-  margin: 5% auto;
+  margin: 5% auto ;
 }
 
 .main,
@@ -108,9 +108,10 @@ a:hover {
 }
 
 .productStage {
-  background: #fff;
+  background: white;
   width: 700px;
-  margin-right: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .productImage {

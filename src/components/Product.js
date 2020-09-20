@@ -218,7 +218,7 @@ export default function Product(props) {
         </div>
       </div>
 
-      <div className="sidebar slim">
+     {/* <div className="sidebar slim">
         <div className="folderTab sub clearFix">
           <h3>Similar Items</h3>
         </div>
@@ -302,7 +302,7 @@ export default function Product(props) {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
