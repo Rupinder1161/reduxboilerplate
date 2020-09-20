@@ -14,7 +14,7 @@ function Foodlist(props) {
   const state = useSelector((state) => state.data);
 
   return (
-    <div style={{marginTop:"0px"}}>
+    <div style={{ marginTop: "0px" }}>
       <div className="center">
         <div className="centeralData">
           {" "}
@@ -23,8 +23,6 @@ function Foodlist(props) {
         <FormControl style={stylej.inputbox} size="small" variant="outlined">
           <OutlinedInput
             id="outlined-adornment-amount"
-            focused
-            input
             // defaultValue={0}
             value={price}
             onChange={(e) => setPrice(e.target.value)}
@@ -51,15 +49,15 @@ const stylej = {
     backgroundImage: "white",
     marginTop: "10vh",
     marginBottom: "10vh",
-    borderRadius: "20px",
+    borderRadius: "20px"
   },
   inline: {
-    display: "inline",
+    display: "inline"
   },
   inputbox: {
     marginTop: "60px",
     marginBottom: "60px",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
-  },
+    boxShadow: "0 5px 15px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)"
+  }
 };
 export default Foodlist;
