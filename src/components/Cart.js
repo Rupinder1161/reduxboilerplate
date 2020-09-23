@@ -14,11 +14,10 @@ const Table = (props) => (
         width: "90%",
         marginTop: "5%",
         marginLeft: "5%",
-        marginRight: "5%",
+        marginRight: "5%"
       }}
     >
-      
-      <thead style={{marginTop:"100px"}}>
+      <thead style={{ marginTop: "100px" }}>
         <tr>
           <th scope="col">Food Name</th>
           <th scope="col">Venue Name</th>
@@ -50,7 +49,7 @@ const Table = (props) => (
     {/* <Typography> Total :{props.dataPrice}</Typography> */}
 
     <div className="subtotal cf">
-    <Typography> Total :{props.dataPrice}</Typography>
+      <Typography> Total :{props.dataPrice}</Typography>
       <ul>
         <li className="totalRow">
           <span className="label">Subtotal</span>
@@ -93,7 +92,7 @@ function Cart(props) {
 
   return (
     <div className="mainWindw">
-      <h1 className="projTitle"> {props.hh}</h1>
+      {/* <h1 className="projTitle"> {props.hh}</h1> */}
       <div className="titlewindow">
         <h1 className="myCart"> Your Cart</h1>
         <Link to="/" className="btn continue">

@@ -1,6 +1,5 @@
 /* Footer.js */
 
-
 .footer {
   /* clear: both; */
   bottom: 0;
@@ -14,7 +13,7 @@
   font-weight: 800;
   font-size: 15px;
 }
-.div_Footer_One{
+.div_Footer_One {
   margin-top: 30px;
   padding: 20px;
   width: 60%;
@@ -23,12 +22,11 @@
   border-bottom: 1px solid green;
 }
 
-.div_Footer_two{
+.div_Footer_two {
   padding: 20px;
   width: 60%;
   display: flex;
   justify-content: center;
-
 }
 .Footerdiv {
   width: 100%;
@@ -198,7 +196,7 @@ table th {
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
 }
 .titlewindow {
   width: 75%;
