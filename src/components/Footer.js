@@ -8,12 +8,16 @@ export class Footer extends Component {
     return (
       <div className="footer">
         <div className="div_Footer_One">
-          <p>Contact</p>
-          <p>ABOUT</p>
-          <p>FAQs</p>
-          <InstagramIcon />
-          <TwitterIcon />
-          <FacebookIcon />
+          <div className="Icons">
+            <p>Contact</p>
+            <p>ABOUT</p>
+            <p>FAQs</p>
+          </div>
+          <div className="Icons">
+            <InstagramIcon />
+            <TwitterIcon />
+            <FacebookIcon />
+          </div>
         </div>
         <div className="div_Footer_two">
           <p> Jagtari Ltd 2020. All rights reserved.</p>

@@ -15,13 +15,22 @@
 }
 .div_Footer_One {
   margin-top: 30px;
-  padding: 20px;
+  padding: 10px;
   width: 60%;
   display: flex;
-  justify-content: space-evenly;
+  min-width: 200px;
+  flex-flow: row wrap;
+  justify-content: space-between;
   border-bottom: 1px solid green;
 }
 
+.Icons {
+  width: 40%;
+  display: flex;
+  min-width: 200px;
+  justify-content: space-between;
+  padding-left: 10px;
+}
 .div_Footer_two {
   padding: 20px;
   width: 60%;
