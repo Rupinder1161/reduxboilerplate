@@ -16,3 +16,9 @@ export const updateCategory = (data) => {
     payload: data,
   };
 };
+export const updateTotalPrice = (number) => {
+  return {
+    type: "UPDATE_TOTAL_PRICE",
+    payload: number,
+  };
+};

@@ -103,6 +103,7 @@ a:hover {
 .overview h1,
 .overview h2,
 .overview h3 {
+  float: center;
   padding: 0;
   margin: 0 0 10px 0;
 }
@@ -154,11 +155,14 @@ span a {
 .add {
   width: 150px;
   line-height: 2em;
-  background: #59a80f;
+  background: #f50057;
 }
 
+.MuiButton-contained {
+box-shadow: none !important;
+}
 .add:hover {
-  background: #4b8e0d;
+  background: #f50057;
 }
 
 .wish {
@@ -167,7 +171,7 @@ span a {
 }
 
 .wish:hover {
-  background: #388b87;
+  background: #152423;
 }
 
 .submit {
@@ -219,6 +223,7 @@ span a {
 }
 
 .rating {
+  width:20px;
   color: #fc913a;
 }
 
@@ -422,3 +427,4 @@ span.author {
   background: #184a5a;
   border: 1px solid #184a5a;
 }
+

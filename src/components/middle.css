@@ -25,6 +25,9 @@
   justify-content: center;
   margin-bottom: 100px;
 }
+.mainDivMiddle > .MuiCard-root{
+  border-bottom: none !important;
+}
 .img-responsive {
   height: 20vh;
 }
@@ -35,6 +38,13 @@ div.middleDataDiv:hover {
   margin-top: -5px;
 }
 
+.Button{
+  text-decoration: none !important;
+}
+
+.Button:hover{
+  text-decoration: none !important;
+}
 @keyframes flip {
   from {
     transform: rotateY(0deg);

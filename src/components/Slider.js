@@ -25,7 +25,8 @@ const CardA = (props) => (
       backgroundColor: "#F5F5DC",
       display: "flex",
       flexFlow: "row wrap",
-      justifyContent: "center"
+      justifyContent: "center",
+      borderBottom:" 2px solid #F5F5DC"
     }}
   >
     <CardHeader
@@ -53,16 +54,17 @@ const CardA = (props) => (
         mussels, if you like.
       </Typography>
     </CardContent>
-    <Link to={"/product/" + props.id}>
+    <Link style={{textDecoration:"none"}}
+     to={"/product/" + props.id}>
       <Button
         variant="contained"
-        style={{ width: "100%" }}
+        style={{ width: "100%"}}
         color="secondary"
-        onClick={() => {
-          props.updateCart(props.id);
-        }}
+        // onClick={() => {
+        //   props.updateCart(props.id);
+        // }}
       >
-        Order Now{" "}
+       Order Now
       </Button>
     </Link>
   </Card>

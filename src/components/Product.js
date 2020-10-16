@@ -36,7 +36,7 @@ export default function Product(props) {
               style={{ width: "300px", height: "300px" }}
               src={filteredItem.map((e) => e.Piclink)}
             />
-            <ul className="imageList">
+            {/* <ul className="imageList">
               <li>
                 <a href="#">
                   <img src="92X92" alt="92x92" />
@@ -52,18 +52,18 @@ export default function Product(props) {
                   <img src="92X92" alt="92x92" />
                 </a>
               </li>
-            </ul>
+            </ul> */}
             <span>
-              <a href="#">
+              {/* <a href="#">
                 <b>View More</b>
-              </a>
+              </a> */}
             </span>
           </div>
           <div className="overview">
             <h1>{filteredItem.map((e) => e.FoodName)}</h1>
             <h2>{filteredItem.map((e) => e.VenueName)}</h2>
             <span className="rating">
-              <img src="sbahgh" alt="Rating" />
+              <img src="https://static.thenounproject.com/png/766721-200.png" width="80px" alt="Rating" />
             </span>
             <h3>${filteredItem.map((e) => e.Price)}.00</h3>
             {/* <span>50+ available</span> */}
@@ -75,20 +75,24 @@ export default function Product(props) {
             </span>
 
             <select className="prodSelect">
-              <option selected>Current Product</option>
-              <option>Product Option 2</option>
-              <option>Product Option 3</option>
-              <option>Product Option 4</option>
-              <option>Product Option 5</option>
+              <option selected>Chicken</option>
+              <option>Lamb</option>
+              <option>goat</option>
+              <option>fish</option>
+              <option>Vegan</option>
             </select>
-            <button
+            <div className="button add">  <Button
+            variant="contained"
+            color="secondary"
+            style={{width:"100%"}}
               onClick={() => {
                 console.log(filteredItem.map((e) => e._id)[0]);
                 addToCartTest(filteredItem.map((e) => e._id)[0]);
               }}
             >
               Add to Cart
-            </button>
+            </Button></div>
+          
             <div className="button wish">Add to Wishlist</div>
           </div>
 
