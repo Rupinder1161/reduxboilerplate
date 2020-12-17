@@ -7,90 +7,98 @@ import { useSelector, useDispatch } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import Payment from "./Payment";
 
-//inmport actions 
+//inmport actions
 import { updateTotalPrice } from "../actions";
 
-
- function Table(props) {
+function Table(props) {
   return (
     <div>
-    <table
-      style={{
-        width: "90%",
-        marginTop: "5%",
-        marginLeft: "5%",
-        marginRight: "5%"
-      }}
-    >
-      <thead style={{ marginTop: "100px" }}>
-        <tr>
-          <th scope="col">Food Name</th>
-          <th scope="col">Venue Name</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Quantity</th>
-        </tr>
-      </thead>
-      <tbody>
-        {props.propData.map((e) => (
-          <tr key={e._id}>
-            <td data-label="Food Name">
-              <span style={{ marginLeft: "10px" }}>{e.FoodName}</span>
-            </td>
-            <td data-label="Venue Name">{e.VenueName}</td>
-            <td data-label="Amount">{e.Price}</td>
-            <td data-label="Quantity">
-              <input
-                type="text"
-                style={{ width: "10px", padding: "5px", marginRight: "10px" }}
-                placeholder="3"
-              />
-              x ${e.Price}
-            </td>
+      <table
+        style={{
+          width: "90%",
+          marginTop: "5%",
+          marginLeft: "5%",
+          marginRight: "5%",
+        }}
+      >
+        <thead style={{ marginTop: "100px" }}>
+          <tr>
+            <th scope="col">Food Name</th>
+            <th scope="col">Venue Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Quantity</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {props.propData.map((e) => (
+            <tr key={e._id}>
+              <td data-label="Food Name">
+                <span style={{ marginLeft: "10px" }}>{e.FoodName}</span>
+              </td>
+              <td data-label="Venue Name">{e.VenueName}</td>
+              <td data-label="Amount">{e.Price}</td>
+              <td data-label="Quantity" >
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  placeholder="1"
+                  max="5"
+                 style={{marginRight:"10px"}}
+              ></input>
+                x ${e.Price}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-    {/* <Typography> Total :{props.dataPrice}</Typography> */}
+      {/* <Typography> Total :{props.dataPrice}</Typography> */}
 
-    <div className="subtotal cf">
-      <Typography> Total :{props.dataPrice}</Typography>
-      <ul>
-        <li className="totalRow">
-          <span className="label">Subtotal</span>
-          <span className="value">${props.dataPrice}.00</span>
-        </li>
+      <div className="subtotal cf">
+        <Typography> Total :{props.dataPrice}</Typography>
+        <ul>
+          <li className="totalRow">
+            <span className="label">Subtotal</span>
+            <span className="value">${props.dataPrice}.00</span>
+          </li>
 
-        <li className="totalRow">
-          <span className="label">Shipping</span>
-          <span className="value">${props.shipping}.00</span>
-        </li>
+          <li className="totalRow">
+            <span className="label">Shipping</span>
+            <span className="value">${props.shipping}.00</span>
+          </li>
 
-        <li className="totalRow">
-          <span className="label">Tax</span>
-          <span className="value">${props.tax}.00</span>
-        </li>
-        <li className="totalRow final">
-          <span className="label">Total</span>
-          <span className="value">
-            ${props.dataPrice + props.tax + props.shipping}.00
-          </span>
-        </li>
-        <li className="totalRow">
-          <a href="#" onClick={()=>{updateTotalPrice(20)}} className="btn continue">
-            Proceed for Payment
-          </a>
-          {/* <button onClick={updateTotalPrice(20)} > test</button> */}
-        </li>
-      </ul>
+          <li className="totalRow">
+            <span className="label">Tax</span>
+            <span className="value">${props.tax}.00</span>
+          </li>
+          <li className="totalRow final">
+            <span className="label">Total</span>
+            <span className="value">
+              ${props.dataPrice + props.tax + props.shipping}.00
+            </span>
+          </li>
+          <li className="totalRow">
+            <a
+              href="#"
+              onClick={() => {
+                updateTotalPrice(20);
+              }}
+              className="btn continue"
+            >
+              Proceed for Payment
+            </a>
+            {/* <button onClick={updateTotalPrice(20)} > test</button> */}
+          </li>
+        </ul>
+      </div>
+      <div>
+        {/* payment system */}
+        {/* <Payment fullData={props.propData} /> */}
+      </div>
     </div>
-    <div>
-      {/* payment system */}
-    {/* <Payment fullData={props.propData} /> */}
-    </div>
-    
-  </div>
-  )
+  );
 }
 
 // const Table = (props) => (
@@ -169,7 +177,7 @@ import { updateTotalPrice } from "../actions";
 //       {/* payment system */}
 //     {/* <Payment fullData={props.propData} /> */}
 //     </div>
-    
+
 //   </div>
 // );
 
@@ -203,7 +211,7 @@ function Cart(props) {
               dataPrice={dataPrice}
               tax={tax}
               shipping={shipping}
-            /> 
+            />
           )}
         </div>
       </div>
