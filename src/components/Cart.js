@@ -181,6 +181,7 @@ function Cart(props) {
   const shipping = 4;
 
   return (
+    // <div className="heightBug">
     <div className="mainWindw">
       {/* <h1 className="projTitle"> {props.hh}</h1> */}
       <div className="titlewindow">

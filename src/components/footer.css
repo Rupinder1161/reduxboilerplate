@@ -199,12 +199,18 @@ table th {
   display: flex !important;
   justify-content: space-between !important;
 }
+
+.heightBug{
+   min-height: calc(100vh -200px); 
+  margin-top: auto; 
+}
 .mainWindw {
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  
   flex-flow: row wrap;
 }
 .titlewindow {

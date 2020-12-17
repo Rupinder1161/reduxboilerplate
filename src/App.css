@@ -1,9 +1,12 @@
+
+
 .App {
- height: 100%;
   width: 100%;
+  /* background-color:gray ; */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
    
 }
 
@@ -18,3 +21,11 @@
   margin-top: 2px !important;
   background: linear-gradient(to right, #ffb347, #ffcc33);
 }
+
+.footer{
+  margin-top: auto;
+}
+/* .footer{
+  position: fixed;
+  bottom: 0;
+} */

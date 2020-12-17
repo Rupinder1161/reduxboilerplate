@@ -46,7 +46,7 @@ function App() {
           <Route path="/product/:id" component={Product} />
           <Route component={Four} />
         </Switch>
-        <Footer />
+        <Footer className="footer"/>
       </div>
     </Router>
   );
