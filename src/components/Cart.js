@@ -25,8 +25,8 @@ function Table(props) {
           <tr>
             <th scope="col">Food Name</th>
             <th scope="col">Venue Name</th>
-            <th scope="col">Amount</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Amount</th>
           </tr>
         </thead>
         <tbody>
@@ -36,9 +36,7 @@ function Table(props) {
                 <span style={{ marginLeft: "10px" }}>{e.FoodName}</span>
               </td>
               <td data-label="Venue Name">{e.VenueName}</td>
-              <td data-label="Amount">{e.Price}</td>
-              <td data-label="Quantity" >
-                <input
+              <td data-label="Quantity"><input
                   type="number"
                   id="quantity"
                   name="quantity"
@@ -46,8 +44,9 @@ function Table(props) {
                   placeholder="1"
                   max="5"
                  style={{marginRight:"10px"}}
-              ></input>
-                x ${e.Price}
+              ></input></td>
+              <td data-label="Amount" >
+                ${e.Price}
               </td>
             </tr>
           ))}
